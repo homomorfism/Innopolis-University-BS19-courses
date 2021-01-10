@@ -13,3 +13,4 @@ For contributors: please add your links to github with your solutions.
 Links to solutions: 
 - https://github.com/homomorfism/DEApp
 - https://github.com/mcflydesigner/Differential-Equation-Computation
+- https://github.com/sevenzing/de_solver
