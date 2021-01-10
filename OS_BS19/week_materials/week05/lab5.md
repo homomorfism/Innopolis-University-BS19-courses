@@ -64,7 +64,11 @@ itself? What is the critical region?
 
 #### Solution 2 
 
-Explanation will be added!
++ To prevent the race, we can add `ln` command. `ln` basically checks if `ex2.lock` exists, if so, returns false, otherwise, returns true and creates `ex2.lock`
+
++ Changing content on ex2.lock file, will automatically change content of ex2.txt file
+
++ To append a file instead of rewriting, use >> instead of >
 
 ```bash
 while : 
@@ -72,7 +76,7 @@ do
 	if ln ex2.txt ex2.lock; then
 	    end=$(tail -n 1 < ex2.lock)
 	    ((end = end + 1))
-	    echo "$end" > ex2.lock
+	    echo "$end" >> ex2.lock
 	    rm ex2.lock
 	fi
 done
